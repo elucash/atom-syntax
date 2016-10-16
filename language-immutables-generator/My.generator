@@ -1,0 +1,12 @@
+package a;
+
+[for ff = in a]
+[-- in ]
+@Annotation("abulicates")
+public class [Ass] {
+
+}
+
+[template abulicates Template aaa]
+
+[/template]

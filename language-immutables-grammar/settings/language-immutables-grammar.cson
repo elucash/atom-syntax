@@ -1,0 +1,4 @@
+'.source.grammar':
+  'editor':
+    'commentStart': '--'
+    'commentEnd': '\n'

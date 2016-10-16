@@ -1,0 +1,4 @@
+'.source.grammar':
+  'bla_format':
+    'prefix': 'bla'
+    'body': 'BLABLABLA'

@@ -1,0 +1,4 @@
+'.source.generator':
+  'bla_format':
+    'prefix': 'bla'
+    'body': 'BLABLABLA'

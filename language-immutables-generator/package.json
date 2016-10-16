@@ -1,0 +1,20 @@
+{
+  "name": "language-immutables-generator",
+  "version": "0.0.1",
+  "description": "Syntax support for Immutables Generator templates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elucash/atom-syntax.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# Attempt to hack Immutables Generator templates syntax, primarily to gen javacode\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/elucash/atom-syntax/issues"
+  },
+  "homepage": "https://github.com/elucash/atom-syntax"
+}
