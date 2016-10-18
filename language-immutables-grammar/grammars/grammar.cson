@@ -8,200 +8,108 @@
     'include': '#comments'
   }
   {
-    'include': '#comments-javadoc'
-  }
-  {
-    'include': '#comments-generator'
-  }
-  {
-    'include': '#comments-generator-comment'
+    'include': '#range-literal'
   }
   {
     'include': '#strings'
   }
   {
-    'match': '\\b(abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|native|new|package|private|protected|public|return|short|static|strictfp|super|switch|syncronized|this|throw|throws|transient|try|void|volatile|while|true|false|null)\\b'
-    'name': 'keyword.other.java'
+    'include': '#terms'
   }
   {
-    'match': '\\(|\\)'
-    'name': 'brace.round.java'
+    'match': '\\||\\(|\\)|\\~'
+    'name': 'punctuation.separator.grammar'
   }
   {
-    'match': '\\{|\\}'
-    'name': 'brace.curly.java'
+    'match': '\\?|\\+|\\*|\\!|\\&'
+    'name': 'keyword.operator.grammar'
   }
   {
-    'match': ';'
-    'name': 'punctuation.terminator.java'
+    'match': '^[a-z0-9_\\-]+(?![:])\\b'
+    'name': 'entity.name.production.grammar'
   }
   {
-    'match': '\\||\\&|\\+|\\-|\\=|\\>|\\<|\\~|\\^'
-    'name': 'keyword.operator.java'
+    'match': '\\b[a-z0-9_\\-]+(?![:])\\b'
+    'name': 'storage.production.grammar'
   }
   {
-    'match': '\\@([A-Za-z0-9_]*\\b)?'
-    'name': 'support.class'
-  }
-  {
-    'match': '\\.[a-z][A-Za-z0-9_]*\\b'
-    'name': 'some.variable'
-  }
-  {
-    'match': '\\b[A-Z][a-z][A-Za-z0-9_]*\\b'
-    'name': 'storage.type.java'
-  }
-  {
-    'match': '\\b((0(b|B)[01]+)|(0(x|X)[0-9a-fA-F]+)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\\b'
-    'name': 'constant.numeric.java'
+    'match': '\\b[a-z0-9_\\-]+[:]'
+    'name': 'storage.field.grammar'
   }
 ]
 'repository':
   'strings':
     'patterns': [
       {
-        'begin': '"'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.java'
-        'end': '"'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.java'
-        'name': 'string.quoted.double.java'
-        'patterns': [
-          {
-            'include': '#comments-generator'
-          }
-          {
-            'include': '#comments-generator-comment'
-          }
-          {
-            'match': '\\\\.'
-            'name': 'constant.character.escape.java'
-          }
-        ]
-      }
-      {
+        'name': 'string.quoted.single.grammar'
         'begin': '\''
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.java'
+            'name': 'punctuation.definition.string.begin.grammar'
         'end': '\''
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.java'
-        'name': 'string.quoted.single.java'
+            'name': 'punctuation.definition.string.end.grammar'
         'patterns': [
           {
-            'include': '#comments-generator'
-          }
-          {
-            'include': '#comments-generator-comment'
-          }
-          {
             'match': '\\\\.'
-            'name': 'constant.character.escape.java'
+            'name': 'constant.character.escape.grammar'
           }
         ]
       }
     ]
-  'comments-generator':
+  'terms':
     'patterns': [
+      {
+        'name': 'storage.type.terms.grammar'
+        'begin': '<'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.terms.begin.grammar'
+        'end': '>'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.terms.end.grammar'
+      }
+    ]
+  'range-literal':
+    'patterns': [
+      'name': 'range.block.grammar'
       'begin': '\\[(?!--)'
       'beginCaptures':
         '0':
-          'name': 'punctuation.definition.generator.java'
+          'name': 'punctuation.definition.range.grammar'
       'end': '\\]'
       'endCaptures':
         '0':
-          'name': 'punctuation.definition.generator.java'
-      'name': 'generator.block.java'
+          'name': 'punctuation.definition.range.grammar'
       'patterns': [
         {
-          'match': '\\b(template|if|else|for|let|in|not|and|or)\\b'
-          'name': 'keyword.generator.java'
+          'match': '-|\\^'
+          'name': 'punctuation.range.grammar'
         },
         {
-          'match': ',|\\(|\\)|\\.|='
-          'name': 'punctuation.generator.java'
+          'match': '\\\\.'
+          'name': 'constant.character.escape.grammar'
         },
-        {
-          'begin': '\''
-          'end': '\''
-          'name': 'string.generator.java'
-        }
       ]
-    ]
-  'comments-generator-comment':
-    'patterns': [
-      'begin': '\\[--'
-      'end': '\\]'
-      'name': 'comment.generator.block.java'
     ]
   'comments':
     'patterns': [
       {
-        'captures':
-          '0':
-            'name': 'punctuation.definition.comment.java'
-        'match': '/\\*\\*/'
-        'name': 'comment.block.empty.java'
-      }
-      {
-        'include': '#comments-inline'
-      }
-      {
-        'include': '#comments-generator'
-      }
-      {
-        'include': '#comments-generator-comment'
-      }
-    ]
-  'comments-inline':
-    'patterns': [
-      {
-        'begin': '/\\*'
-        'captures':
-          '0':
-            'name': 'punctuation.definition.comment.java'
-        'end': '\\*/'
-        'name': 'comment.block.java'
-        'patterns': [
-          {
-            'match': '@(author|deprecated|return|see|serial|since|version|param|throws|link)\\b'
-            'name': 'tag.documentation.javadoc.java'
-          }
-          {
-            'include': '#comments-generator'
-          }
-          {
-            'include': '#comments-generator-comment'
-          }
-        ]
-      }
-      {
-        'begin': '(^[ \\t]+)?(?=//)'
+        'begin': '(^[ \\t]+)?(?=\\-\\-)'
         'beginCaptures':
           '1':
-            'name': 'punctuation.whitespace.comment.leading.java'
+            'name': 'punctuation.whitespace.comment.leading.grammar'
         'end': '(?!\\G)'
         'patterns': [
           {
-            'begin': '//'
+            'begin': '--'
             'beginCaptures':
               '0':
-                'name': 'punctuation.definition.comment.java'
+                'name': 'punctuation.definition.comment.grammar'
             'end': '\\n'
-            'name': 'comment.line.double-slash.java'
-            'patterns': [
-              {
-                'include': '#comments-generator'
-              }
-              {
-                'include': '#comments-generator-comment'
-              }
-            ]
+            'name': 'comment.line.grammar'
           }
         ]
       }
