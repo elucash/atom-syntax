@@ -24,7 +24,7 @@ terminal
 
 list
   | '[' ']'
-  | '[' elem:terminal (',' elem:terminal)* ']'
+  | '[' aaa-elem:terminal (',' elem:terminal)* ']'
 
 expression
   left: terminal operator: operator right: terminal

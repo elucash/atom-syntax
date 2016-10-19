@@ -29,7 +29,7 @@
     'name': 'entity.name.production.grammar'
   }
   {
-    'match': '\\b[a-z][a-z0-9_\\-][a-z0-9]+(?![:\\-])\\b'
+    'match': '\\b[a-z][a-z0-9_\\-]*[a-z0-9](?![:\\-])\\b'
     'name': 'storage.production.grammar'
   }
   {
