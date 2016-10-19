@@ -27,7 +27,7 @@ list
   | '[' elem:terminal (',' elem:terminal)* ']'
 
 expression
-	left: terminal operator:operator right:terminal
+  left: terminal operator: operator right: terminal
 
 expressions
-	first: terminal (operator:operator right:terminal)*
+	first: terminal (operator: operator right: terminal)*

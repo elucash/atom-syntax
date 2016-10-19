@@ -25,15 +25,15 @@
     'name': 'keyword.operator.grammar'
   }
   {
-    'match': '^[a-z0-9_\\-]+(?![:])\\b'
+    'match': '^[a-z][a-z0-9_\\-]*[a-z0-9](?![:\\-])\\b'
     'name': 'entity.name.production.grammar'
   }
   {
-    'match': '\\b[a-z0-9_\\-]+(?![:])\\b'
+    'match': '\\b[a-z][a-z0-9_\\-][a-z0-9]+(?![:\\-])\\b'
     'name': 'storage.production.grammar'
   }
   {
-    'match': '\\b[a-z0-9_\\-]+[:]'
+    'match': '[a-z][a-z0-9_\\-]*[a-z0-9][:]'
     'name': 'storage.field.grammar'
   }
 ]
