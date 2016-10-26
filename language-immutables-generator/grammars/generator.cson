@@ -1,5 +1,5 @@
 'scopeName': 'source.java'
-'name': 'Immutables'
+'name': 'Immutables Generator'
 'fileTypes': [
   'generator'
 ]
