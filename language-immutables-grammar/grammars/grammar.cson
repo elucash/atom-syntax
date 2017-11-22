@@ -17,7 +17,7 @@
     'include': '#terms'
   }
   {
-    'match': '\\||\\(|\\)|\\~'
+    'match': '\\||\\(|\\)|\\~|\\^'
     'name': 'punctuation.separator.grammar'
   }
   {
